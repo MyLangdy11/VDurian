@@ -1,27 +1,46 @@
+// scroll items
 document.addEventListener('DOMContentLoaded', () => {
   let scrollingContainer = document.querySelector('.scrolling-container');
-  let isMouseDown = false;
+  let isDragging = false;
   let startX = 0;
   let scrollLeft = 0;
 
   scrollingContainer.addEventListener('mousedown', (e) => {
-    isMouseDown = true;
-    startX = e.clientX - scrollingContainer.offsetLeft;
+    isDragging = true;
+    startX = e.pageX - scrollingContainer.offsetLeft;
     scrollLeft = scrollingContainer.scrollLeft;
   });
 
   scrollingContainer.addEventListener('mouseleave', () => {
-    isMouseDown = false;
+    isDragging = false;
   });
 
   scrollingContainer.addEventListener('mouseup', () => {
-    isMouseDown = false;
+    isDragging = false;
   });
 
   scrollingContainer.addEventListener('mousemove', (e) => {
-    if (!isMouseDown) return;
+    if (!isDragging) return;
     e.preventDefault();
-    const x = e.clientX - scrollingContainer.offsetLeft;
+    const x = e.pageX - scrollingContainer.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust the scroll speed
+    scrollingContainer.scrollLeft = scrollLeft - walk;
+  });
+
+  scrollingContainer.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX - scrollingContainer.offsetLeft;
+    scrollLeft = scrollingContainer.scrollLeft;
+  });
+
+  scrollingContainer.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  scrollingContainer.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX - scrollingContainer.offsetLeft;
     const walk = (x - startX) * 2; // Adjust the scroll speed
     scrollingContainer.scrollLeft = scrollLeft - walk;
   });
