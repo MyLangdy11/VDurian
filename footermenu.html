@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+    <style>
+    
+        /* Menu bottom */
+        .menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            transition: bottom 0.3s ease;
+          }
+          .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+          }
+          
+          .menu-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+          }
+          
+          .menu-item span {
+            font-size: 12px;
+          }
+        /* End menu bottom */
+        </style>
+        <!-- Menu bottom -->
+        <body>
+        <div class="menu">
+            <a href="index.html" class="menu-item" id="home">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </a>
+            <a href="show.html" class="menu-item" id="categories">
+              <i class="fas fa-list"></i>
+              <span>Categories</span>
+            </a>
+            <a href="#" class="menu-item" id="place">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Place</span>
+            </a>
+            <a href="#" class="menu-item" id="contact">
+              <i class="fas fa-envelope"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+           <!-- end menu bottom -->
+        
+           <script>
+            // Bottom menu
+        
+          // Add an active class to the clicked menu item
+          const menuItems = document.querySelectorAll('.menu-item');
+        
+        menuItems.forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            menuItems.forEach(item => {
+              item.classList.remove('active');
+              item.querySelector('i').classList.remove('active');
+            });
+            item.classList.add('active');
+            item.querySelector('i').classList.add('active');
+          });
+        });
+        
+        // hide or show
+        let prevScrollPos = window.pageYOffset;
+        const menu = document.querySelector('.menu');
+        
+        window.addEventListener('scroll', () => {
+        const currentScrollPos = window.pageYOffset;
+        
+        if (prevScrollPos > currentScrollPos) {
+          menu.style.bottom = '0';
+        } else {
+          menu.style.bottom = '-60px';
+        }
+        
+        prevScrollPos = currentScrollPos;
+        });
+           </script>
+</body>
+</html>

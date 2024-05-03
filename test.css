@@ -187,7 +187,7 @@ nav ul{
 .out-container{
     width: 100%;
     margin: auto;
-    height: 1000vh;
+    height: 300vh;
     /* background-color: #37474f; */
     background-color: #fff;
     border-top-left-radius:25px ;
@@ -196,7 +196,7 @@ nav ul{
 }
 .in-container{
     width: 75%;
-    height: 100vh;
+    height: auto;
     display: block;
     margin: auto;
     border-top-left-radius:25px ;
