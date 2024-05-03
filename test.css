@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'logofont';
-    src: url(fonts/Khmer\ OS\ Moul.ttf);
+    src: url(fonts/AKbalthom\ KmengKmang.ttf);
   }
 @font-face {
     font-family: 'title';
-    src: url(fonts/Khmer\ OS\ Moul.ttf);
+    src: url(fonts/AKbalthom\ KmengKmang.ttf);
 }
 @font-face {
     font-family: 'subtitle';
@@ -62,7 +62,8 @@ header nav ul {
 }
 header nav ul li a {
     display: inline-block;
-    color: var(--logo-color);
+    color: #ffffff; /* Set the text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow */
     padding: 5px 0;
     margin: 0 10px;
     border: 3px solid transparent;
@@ -109,7 +110,7 @@ header nav ul li a.active {
         left: -100%;
         top: 70px;
         height: 100vh;
-        background: #fff;
+        background: var(--clr-gray);
         padding: 30px;
         transition: 0.3s;
     }
@@ -136,17 +137,57 @@ header nav ul li a.active {
 .logo .logo-text{
     font-family: 'logofont';
     font-size: 22px;
+    color: #ffffff; /* Set the text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow */
+      
 }
 nav ul{
     font-family: 'title';
 }
+
+/* header scrolling */
+/* Styles for the header */
+#header {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: top 0.3s ease-in-out;
+    z-index: 9999;
+  }
+  
+  #header.show {
+    top: 0;
+  }
+  
+  /* Add appropriate styling to the rest of the elements */
+  
+  /* CSS animation for the header */
+  @keyframes slideDown {
+    0% {
+      top: -100px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -100px;
+    }
+  }
 /* End of navigation */
 
 /* body content */
 .out-container{
     width: 100%;
     margin: auto;
-    height: 100vh;
+    height: 1000vh;
     /* background-color: #37474f; */
     background-color: #fff;
     border-top-left-radius:25px ;
