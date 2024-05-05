@@ -5,28 +5,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="slider_dots-main/styleslide.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Visit Samlout</title>
   <style>
     body {
-  background-image: url(cover\ Visit\ samlout.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+      background-image: url(cover\ Visit\ samlout.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
 
-@media screen and (max-width: 767px) {
-  body {
-    background-position: top center;
-    background-size: 100% auto;
-  }
-  .in-container{
-    margin-top:200px;
-  }
-}
+    @media screen and (max-width: 767px) {
+      body {
+        background-position: top center;
+        background-size: 100% auto;
+      }
+
+      .in-container {
+        margin-top: 200px;
+      }
+
+      .logodis {
+        display: block;
+        margin: auto;
+      }
+    }
   </style>
 </head>
 
@@ -127,10 +133,22 @@
         </a>
         <!-- Add more items as needed -->
       </div>
+
+
+      <!-- About -->
+      <lable class="la-title">អំពីស្រុកសំឡូត</lable>
+      <img class="logodis" src="img/samloutlogo-removebg-preview.png" alt="SamloutDistrict"
+        style="width:120px; display: flex;justify-content: left;">
+      <p>
+        ស្រុកសំឡូតជាស្រុកមួយចំណោមក្រុង/ស្រុកទាំង១៤ក្នុងខេត្តបាត់ដំបង។ ស្រុកសំឡូតមានឃុំសរុបចំនួន៧ មានដូចជា៖ ឃុំកំពង់ល្ពៅ
+        ឃុំតាតោក ឃុំតាសាញ ឃុំមានជ័យ ឃុំសំឡូត ឃុំស៊ុង ឃុំអូរសំរិល។
+      </p><br>
+
+
+
     </div>
   </div>
   <!-- End content -->
-
 
   <!-- Menu bottom -->
   <div class="menu">
@@ -154,14 +172,15 @@
   <!-- end menu bottom -->
   <!-- Popup image show -->
   <div class="con-pop">
-  <div class="popup-container">
-    <span class="close-button">&times;</span>
-    <img class="popup-image" src="">
+    <div class="popup-container">
+      <span class="close-button">&times;</span>
+      <img class="popup-image" src="">
       <div class="zoom-button1" id="zoom-in">ពង្រីក (+)</div>
-    <div class="zoom-button2" id="zoom-out">បង្រួម (-)</div>
-</div>
-</div>
-<script>
+      <div class="zoom-button2" id="zoom-out">បង្រួម (-)</div>
+    </div>
+  </div>
+
+  <script>
     // Get all item links
     var itemLinks = document.getElementsByClassName("item");
     // Get the popup container
@@ -176,36 +195,36 @@
 
     // Attach click event listeners to each item
     for (var i = 0; i < itemLinks.length; i++) {
-        itemLinks[i].addEventListener("click", function(e) {
-            e.preventDefault();
-            var imageUrl = this.getAttribute("href");
-            popupImage.setAttribute("src", imageUrl);
-            popupContainer.style.display = "flex";
-        });
+      itemLinks[i].addEventListener("click", function (e) {
+        e.preventDefault();
+        var imageUrl = this.getAttribute("href");
+        popupImage.setAttribute("src", imageUrl);
+        popupContainer.style.display = "flex";
+      });
     }
 
     // Attach click event listener to the close button
-    closeButton.addEventListener("click", function() {
-        popupContainer.style.display = "none";
+    closeButton.addEventListener("click", function () {
+      popupContainer.style.display = "none";
     });
 
     // Zoom functionality
     var zoomLevel = 1;
 
-    zoomInButton.addEventListener("click", function() {
-        zoomLevel += 0.1;
-        applyZoom();
+    zoomInButton.addEventListener("click", function () {
+      zoomLevel += 0.1;
+      applyZoom();
     });
 
-    zoomOutButton.addEventListener("click", function() {
-        zoomLevel -= 0.1;
-        applyZoom();
+    zoomOutButton.addEventListener("click", function () {
+      zoomLevel -= 0.1;
+      applyZoom();
     });
 
     function applyZoom() {
-        popupImage.style.transform = "scale(" + zoomLevel + ")";
+      popupImage.style.transform = "scale(" + zoomLevel + ")";
     }
-</script>
+  </script>
   <!-- end popup image show -->
 
   <script src="js.js"></script>
