@@ -73,3 +73,51 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 };
+
+// Image memory show pop
+    // Get all item links
+    var itemLinks = document.getElementsByClassName("item");
+    // Get the popup container
+    var popupContainer = document.getElementsByClassName("popup-container")[0];
+    // Get the popup image
+    var popupImage = popupContainer.getElementsByClassName("popup-image")[0];
+    // Get the close button
+    var closeButton = popupContainer.getElementsByClassName("close-button")[0];
+    // Get the zoom buttons
+    var zoomInButton = document.getElementById("zoom-in");
+    var zoomOutButton = document.getElementById("zoom-out");
+
+    // Attach click event listeners to each item
+    for (var i = 0; i < itemLinks.length; i++) {
+      itemLinks[i].addEventListener("click", function (e) {
+        e.preventDefault();
+        var imageUrl = this.getAttribute("href");
+        popupImage.setAttribute("src", imageUrl);
+        popupContainer.style.display = "flex";
+      });
+    }
+
+    // Attach click event listener to the close button
+    closeButton.addEventListener("click", function () {
+      popupContainer.style.display = "none";
+    });
+
+    // Zoom functionality
+    var zoomLevel = 1;
+
+    zoomInButton.addEventListener("click", function () {
+      zoomLevel += 0.1;
+      applyZoom();
+    });
+
+    zoomOutButton.addEventListener("click", function () {
+      zoomLevel -= 0.1;
+      applyZoom();
+    });
+
+    function applyZoom() {
+      popupImage.style.transform = "scale(" + zoomLevel + ")";
+    }
+
+
+    
