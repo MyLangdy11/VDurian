@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="slider_dots-main/styleslide.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <title>Document</title>
+  <style>
+    
+/* Menu bottom */
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: bottom 0.3s ease;
+}
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-item i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.menu-item.active i {
+  color: red;
+  background-color: #37474f;
+}
+
+.menu-item span {
+  font-size: 12px;
+}
+/* End menu bottom */
+  </style>
+</head>
+<body>
+  <!-- Menu bottom -->
+  <div class="menu">
+    <a href="../index.html" class="menu-item" id="home">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="show.html" class="menu-item" id="categories">
+      <i class="fas fa-list"></i>
+      <span>Categories</span>
+    </a>
+    <a href="#" class="menu-item" id="place">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Place</span>
+    </a>
+    <a href="#" class="menu-item" id="contact">
+      <i class="fas fa-envelope"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+  <!-- end menu bottom -->
+  <script src="scrollitems.js"></script>
+</body>
+</html>
