@@ -289,6 +289,7 @@ nav ul{
 /* Menu bottom */
 .menu {
   position: fixed;
+  font-family: 'subtitle';
   bottom: 0;
   left: 0;
   width: 100%;

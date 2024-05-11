@@ -136,3 +136,20 @@
             transform: rotate(360deg);
         }
     }
+    @font-face {
+        font-family: 'logofont';
+        src: url(../fonts/AKbalthom\ KmengKmang.ttf);
+      }
+    /* Top */
+    .top{
+        height: 40px;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        font-family: 'logofont' ;
+        font-size: 18px;
+    }
+    .top h3{
+        align-items: center;
+        
+    }
